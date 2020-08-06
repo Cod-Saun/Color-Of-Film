@@ -32,9 +32,7 @@ for file in os.listdir(path):
 
     final_vals.append(tuple((r_avg, g_avg, b_avg)))
 
-    print(r_avg)
-    print(g_avg)
-    print(b_avg)
+    print(r_avg, g_avg, b_avg)
     filenum += 1
 
 #Add as command line arguments
@@ -59,4 +57,4 @@ for i in range(0, len(final_vals)):
     cord2 = list(cord2)
     cord2[0] += color_width
     cord2 = tuple(cord2)
-img = img.save("/mnt/c/Users/Cody/Pictures/testout.jpeg")
+img = img.save("/mnt/c/Users/Cody/Pictures/testout.png")
