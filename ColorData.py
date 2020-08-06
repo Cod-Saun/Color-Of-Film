@@ -4,39 +4,23 @@ from PIL import Image, ImageDraw
 
 #Add as command line argument
 path = "/mnt/c/Users/Cody/Pictures/Wallpapers/"
-filenum = 0
+filenum = 1
 final_vals = []
 for file in os.listdir(path):
     print("--------------------")
     img = Image.open(path + file)
-    rgb_vals = []
-    r_total = 0
-    g_total = 0
-    b_total = 0
+    rgb_vals = numpy.asarray(img)
+    rgb_avg = numpy.mean(rgb_vals, axis=(0, 1))
+    rgb_avg = numpy.around(rgb_avg)
+    rgb_avg = rgb_avg.astype(int)
+    final_vals.append(tuple(rgb_avg))
+    print(rgb_avg)
+    print("file #" + str(filenum) + " of 38")
+    filenum += 1 
 
-    #Iterate through each pixel of the provided image and append its pixel values to rgb_vals
-      #This makes rgb_vals an array of tuples (ex: rgb_vals[(r_val, g_val, b_val), (r_val, g_val, b_val), etc.])
-    for y in range(img.height):
-        for x in range (img.width):
-            rgb_vals.append(img.getpixel((x, y)))
+print(final_vals)
 
-    #add each r, g, b value to get an overall total
-    for i in range(len(rgb_vals)):
-        r_total += rgb_vals[i][0]
-        g_total += rgb_vals[i][1]
-        b_total += rgb_vals[i][2]
-
-    #Average each r, g, b total with the number of pixels in the image to get an overall color
-    r_avg = round(r_total/(img.height * img.width))
-    g_avg = round(g_total/(img.height * img.width))
-    b_avg = round(b_total/(img.height * img.width))
-
-    final_vals.append(tuple((r_avg, g_avg, b_avg)))
-
-    print(r_avg, g_avg, b_avg)
-    filenum += 1
-
-#Add as command line arguments
+#Add as command line arguments 
 outfile_width = 1000
 outfile_height = 500
 color_width = outfile_width/len(final_vals)
@@ -58,4 +42,4 @@ for i in range(0, len(final_vals)):
     cord2 = list(cord2)
     cord2[0] += color_width
     cord2 = tuple(cord2)
-img = img.save("/mnt/c/Users/Cody/Pictures/testout.png")
+img = img.save("/mnt/c/Users/Cody/Pictures/testout2.png")
