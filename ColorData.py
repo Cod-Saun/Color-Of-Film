@@ -1,4 +1,5 @@
 import os
+import numpy
 from PIL import Image, ImageDraw
 
 #Add as command line argument
