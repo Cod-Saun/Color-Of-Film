@@ -9,7 +9,7 @@ if len(sys.argv) < 5:
     sys.exit()
 if len(sys.argv) > 5:
     print("Too many arguments recieved.")
-    print("python Colordata.py [path to images] [path to output file]")
+    print("python Colordata.py [path to images] [path to output file] [width of final image] [height of final image]")
     sys.exit()
 
 path = sys.argv[1]
