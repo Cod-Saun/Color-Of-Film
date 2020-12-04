@@ -6,3 +6,4 @@ Using the Pillow pyhton library each color value of each pixel of the images in 
 Here are some examples of the output of the program:
 ![Image Example](https://i.imgur.com/li49mny.jpg)
 ![Image Example 2](https://i.imgur.com/UHjmSA4.png)
+![Image Example 3](https://i.imgur.com/OwARVnF.png)
