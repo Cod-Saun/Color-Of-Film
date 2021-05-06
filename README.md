@@ -7,7 +7,6 @@ I created the project after seeing similar graphics posted online corresponding 
 
 Below are some examples of the output of the program.
 
-![Image Example](https://i.imgur.com/li49mny.jpg)
 Hunt for the Wilderpeople
 ![Image Example 2](https://i.imgur.com/UHjmSA4.png)
 Spider-Man: Into the Spider-Verse
